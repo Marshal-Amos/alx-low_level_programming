@@ -13,7 +13,7 @@ int main(void)
 	{
 		for (second_num = 1; second_num < 10; second_num++)
 		{
-			if (first_num == second_num)
+			if (first_num == second_num || first_num > second_num)
 				continue;
 
 			putchar((first_num % 10) + '0');
