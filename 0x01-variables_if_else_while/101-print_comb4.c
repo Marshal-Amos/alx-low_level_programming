@@ -16,14 +16,16 @@ int main(void)
 			for (third_n = 2; third_n < 10; third_n++)
 			{
 				if (first_n == second_n || first_n == third_n || second_n == third_n)
-				       continue;
-				if (first_n > second_n || first_n > third_n || second_n > third_n)
+				{
 					continue;
-
+				}
+				if (first_n > second_n || first_n > third_n || second_n > third_n)
+				{
+					continue;
+				}
 				putchar((first_n % 10) + '0');
 				putchar((second_n % 10) + '0');
 				putchar((third_n % 10) + '0');
-
 				if (first_n < 7 || second_n < 8 || third_n < 9)
 				{
 					putchar(',');
