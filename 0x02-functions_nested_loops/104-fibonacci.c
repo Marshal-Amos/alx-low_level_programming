@@ -13,7 +13,7 @@ int main(void)
 	num_2 = 2;
 	printf("%d, %d", num_1, num_2);
 
-	for (counter = 2; counter < 98; counter++)
+	for (counter = 0; counter < 96; counter++)
 	{
 		fib_n = num_1 + num_2;
 
