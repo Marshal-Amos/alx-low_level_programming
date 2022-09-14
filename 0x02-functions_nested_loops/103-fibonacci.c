@@ -21,7 +21,7 @@ int main(void)
 		num_2 = fib_n;
 		if (num_1 % 2 == 0)
 		{
-			sum += fib_n;
+			sum += num_1;
 		}
 	}
 	printf("%ld\n", sum);
