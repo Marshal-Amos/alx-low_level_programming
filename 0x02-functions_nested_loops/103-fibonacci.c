@@ -18,13 +18,12 @@ int main(void)
 	{
 		fib_n = num_1 + num_2;
 
-		num_1 = num_2;
-		num_2 = fib_n;
-
 		if (num_1 % 2 == 0)
 		{
 			sum += num_1;
 		}
+		num_1 = num_2;
+		num_2 = fib_n;
 	}
 	printf("%d\n", sum);
 	return (0);
