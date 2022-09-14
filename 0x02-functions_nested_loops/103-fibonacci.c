@@ -7,24 +7,25 @@
  */
 int main(void)
 {
-	long int counter;
-	long int num_1, num_2, fib_n;
-	long int sum = 0;
+	int counter;
+	int num_1, num_2, fib_n;
+	int sum = 0;
 
 	num_1 = 1;
 	num_2 = 2;
 
 	for (counter = 0; counter < 4000000; counter++)
 	{
+		fib_n = num_1 + num_2;
+
+		num_1 = num_2;
+		num_2 = fib_n;
+
 		if (num_1 % 2 == 0)
 		{
 			sum += num_1;
 		}
-
-		fib_n = num_1 + num_2;
-		num_1 = num_2;
-		num_2 = fib_n;
 	}
-	printf("%ld\n", sum);
+	printf("%d\n", sum);
 	return (0);
 }
