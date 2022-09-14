@@ -16,13 +16,14 @@ int main(void)
 
 	for (counter = 0; counter < 4000000; counter++)
 	{
-		fib_n = num_1 + num_2;
-		num_1 = num_2;
-		num_2 = fib_n;
 		if (num_1 % 2 == 0)
 		{
 			sum += num_1;
 		}
+
+		fib_n = num_1 + num_2;
+		num_1 = num_2;
+		num_2 = fib_n;
 	}
 	printf("%ld\n", sum);
 	return (0);
