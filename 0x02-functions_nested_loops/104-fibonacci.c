@@ -15,15 +15,11 @@ int main(void)
 
 	for (counter = 2; counter <= 98; counter++)
 	{
-		printf("%d", fib_n);
+		fib_n = num_1 + num_2;
 
-		if (counter != 98)
-		{
-			printf(", ");
-			fib_n = num_1 + num_2;
-			num_1 = num_2;
-			num_2 = fib_n;
-		}
+		printf(", %d", fib_n);
+		num_1 = num_2;
+		num_2 = fib_n;
 	}
 	printf("\n");
 	return (0);
