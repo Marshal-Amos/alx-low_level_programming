@@ -20,6 +20,7 @@ int main(void)
 		if (counter != 98)
 		{
 			printf(", ");
+			fib_n = num_1 + num_2;
 			num_1 = num_2;
 			num_2 = fib_n;
 		}
