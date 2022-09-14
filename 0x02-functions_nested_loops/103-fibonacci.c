@@ -14,7 +14,7 @@ int main(void)
 	num_1 = 1;
 	num_2 = 2;
 
-	for (counter = 0; counter < 4000000; counter++)
+	for (counter = 3; counter < 4000000; counter++)
 	{
 		fib_n = num_1 + num_2;
 
