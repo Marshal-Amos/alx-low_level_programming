@@ -24,9 +24,9 @@ int main(void)
 		{
 			printf("Buzz");
 		}
-		else 
+		else
 		{
-			printf("%d ", number);
+			printf("%d", number);
 		}
 
 		if (number != 100)
