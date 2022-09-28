@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * find_sqrt - a function that finds the natural square root of an inputted number.
+ * find_sqrt - a function that returns the natural square root of a number
  *
  * @num: The number to find the square root of.
  * @root: The root to be tested.
