@@ -11,7 +11,7 @@
  * Return: nothing
  */
 
-void free_grid(int **grid, int height)
+void free_grid(char **grid, unsigned int height)
 {
 	if (grid != NULL && height != 0)
 	{
@@ -19,6 +19,7 @@ void free_grid(int **grid, int height)
 		{
 			free(grid[height]);
 		}
+		free(grid[height]);
 		free(grid);
 	}
 }
