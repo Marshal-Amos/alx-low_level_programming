@@ -4,7 +4,7 @@
 
 /**
  * string_nconcat - a function that concatenates two strings
- * 
+ *
  * The returned pointer shall point to a newly allocated space in memory,
  * which contains s1, followed by the first n bytes of s2, and null terminated
  * If n is greater or equal to the length of s2 then use the entire string s2
@@ -20,7 +20,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	long unsigned int i, j;
+	unsigned long int i, j;
 	char *strCon;
 
 	if (s1 == NULL)
