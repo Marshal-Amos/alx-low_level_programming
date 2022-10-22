@@ -69,12 +69,14 @@ list_t *add_node(list_t **head, const char *str)
 
 	if (new == NULL)
 	{
+		free(new);
 		return (NULL);
 	}
 
 	new->str = _strdup(str);
 	if (new->str == NULL)
 	{
+		free(new->str);
 		return (NULL);
 	}
 
