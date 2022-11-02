@@ -37,10 +37,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	close(fd);
 
-	wrote = write(1, buf, letters);
-	if (wrote == -1 || wrote < read_n)
+	wrote = write(1, buf, read_n);
+	if (wrote == -1 || wrote != read_n)
 		return (0);
 
 	free(buf);
-	return (read_n);
+	return (wrote);
 }
