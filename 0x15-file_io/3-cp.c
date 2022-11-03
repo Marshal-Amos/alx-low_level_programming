@@ -23,20 +23,21 @@ int main(int argc, char *argv[])
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
 		return (-1);
-
 	fd = open(argv[1], O_RDONLY);
-	read_n = read(fd, buf, 1024);
+	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	while ((read_n = read(fd, buf, 1024)) > 0)
+	{
+		copied = write(fd2, buf, read_n);
+		if (fd2 == -1 || copied == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			exit(99);
+		}
+	}
 	if (fd == -1 || read_n == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't read from %s\n", argv[1]);
 		exit(98);
-	}
-	fd2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	copied = write(fd2, buf, read_n);
-	if (fd2 == -1 || copied == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-		exit(99);
 	}
 	if (close(fd) == -1)
 	{
