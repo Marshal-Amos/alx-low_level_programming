@@ -2,6 +2,23 @@
 #include <stdio.h>
 
 /**
+ * close_file - a function that closes a file descriptor
+ *
+ * @fd: the file descriptor to be closed
+ *
+ * Return: void
+ */
+void close_file(int fd)
+{
+	if (close(fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+
+/**
  * main - a program that copies the content of a file to another file
  *
  * @argc: argument counter
@@ -46,15 +63,8 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't read from %s\n", argv[1]);
 		exit(98);
 	}
-	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd_from);
-		exit(100);
-	}
-	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: can't close fd %d\n", fd_to);
-		exit(100);
-	}
+	close_file(fd_from);
+	close_file(fd_to);
+
 	return (0);
 }
