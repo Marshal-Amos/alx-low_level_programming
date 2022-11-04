@@ -39,11 +39,14 @@ int main(int argc, char *argv[])
 	}
 	buf = malloc(sizeof(char) * 1024);
 	if (buf == NULL)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: can't write to file %s\n", argv[2]);
+		exit(99);
+	}
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't read from %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fd_to = open(argv[2], O_CREAT | O_RDWR | O_TRUNC | O_APPEND, 0664);
@@ -61,7 +64,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: can't read from %s\n", argv[1]);
 		exit(98);
 	}
-
 	close_file(fd_from);
 	close_file(fd_to);
 
